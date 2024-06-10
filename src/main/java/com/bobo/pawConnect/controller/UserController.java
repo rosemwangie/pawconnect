@@ -13,28 +13,30 @@ public class UserController {
 
     private final UserService userService;
 
+    // Constructor Injection
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService){
         this.userService = userService;
     }
 
-    @PostMapping
-    public Users createUser(@RequestBody Users user) {
-        return userService.saveUser(user);
-    }
+   @PostMapping
+    public Users createUser(@RequestBody Users user){
+       return userService.saveUser(user);
+   }
 
-    @GetMapping
+   @GetMapping
     public List<Users> getAllUsers() {
-        return userService.getAllUsers();
-    }
+       return userService.getAllUsers();
+   }
 
-    @GetMapping("/{id}")
-    public Users getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
-    }
+   @GetMapping("/{id}")
+    public Users getUserById(@PathVariable Long id){
+       return userService.getUserById(id);
+   }
 
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-    }
+   @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id){
+       userService.deleteUser(id);
+   }
+
 }
