@@ -1,6 +1,5 @@
 package com.bobo.pawConnect.controller;
 
-
 import com.bobo.pawConnect.model.Dog;
 import com.bobo.pawConnect.service.DogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/dogs")
+@RequestMapping("/api/v1/dogs")
 public class DogController {
 
     public final DogService dogService;
